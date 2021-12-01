@@ -25,9 +25,9 @@ spec:
         - --enable-leader-election
         image: {{ .Values.image }}
         name: manager
-        {{- if .Values.resources }}
-          resources: {{ toYaml .Values.resources | nindent 12 }}
-        {{- end }}
+      {{- if .Values.resources }}
+        resources: {{ toYaml .Values.resources | nindent 12 }}
+      {{- end }}
       terminationGracePeriodSeconds: 10
       serviceAccount: winter-soldier
       serviceAccountName: winter-soldier
