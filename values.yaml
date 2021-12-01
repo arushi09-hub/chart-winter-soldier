@@ -6,6 +6,13 @@ image:
   repository: quay.io/devtron/winter-soldier
   pullPolicy: IfNotPresent
   tag: "3f10a62b-196-5753"
+resources:
+  limits:
+    cpu: 100m
+    memory: 30Mi
+  requests:
+    cpu: 100m
+    memory: 20Mi
 
 hibernator_policies: 
 - apiVersion: pincher.devtron.ai/v1alpha1
@@ -20,13 +27,6 @@ hibernator_policies:
         timeTo: 07:59:59
         weekdayFrom: Mon
         weekdayTo: Fri
-    resources:
-      limits:
-        cpu: 100m
-        memory: 30Mi
-      requests:
-        cpu: 100m
-        memory: 20Mi
     selectors:
     - inclusions:
       - objectSelector:
@@ -39,7 +39,7 @@ hibernator_policies:
     - exclusions:
       - objectSelector:
           name: ""
-          type: "ro,deployment"
+          type: "rollout,deployment"
         namespaceSelector:
           name: "kube-system,argo,devtroncd"
     action: sleep
@@ -63,13 +63,6 @@ hibernator_policies:
         timeTo: 23:59:59
         weekdayFrom: Mon
         weekdayTo: Fri
-    resources:
-      limits:
-        cpu: 100m
-        memory: 30Mi
-      requests:
-        cpu: 100m
-        memory: 20Mi
     selectors:
     - inclusions:
       - objectSelector:
@@ -82,7 +75,7 @@ hibernator_policies:
       exclusions:
       - objectSelector:
           name: ""
-          type: "ro,deployment"
+          type: "rollout,deployment"
         namespaceSelector:
           name: "kube-system,argo,devtroncd"
     action: sleep
@@ -102,13 +95,6 @@ hibernator_policies:
         timeTo: 23:59:59
         weekdayFrom: Mon
         weekdayTo: Fri
-    resources:
-      limits:
-        cpu: 100m
-        memory: 30Mi
-      requests:
-        cpu: 100m
-        memory: 20Mi
     selectors:
     - inclusions:
       - objectSelector:
@@ -121,7 +107,7 @@ hibernator_policies:
     - exclusions:
       - objectSelector:
           name: ""
-          type: "ro,deployment"
+          type: "rollout,deployment"
         namespaceSelector:
           name: "kube-system,argo,devtroncd"
     action: sleep
