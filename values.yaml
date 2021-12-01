@@ -21,12 +21,12 @@ hibernator_policies:
         weekdayFrom: Mon
         weekdayTo: Fri
     resources:
-          limits:
-            cpu: 100m
-            memory: 30Mi
-          requests:
-            cpu: 100m
-            memory: 20Mi
+      limits:
+        cpu: 100m
+        memory: 30Mi
+      requests:
+        cpu: 100m
+        memory: 20Mi
     selectors:
     - inclusions:
       - objectSelector:
@@ -64,12 +64,12 @@ hibernator_policies:
         weekdayFrom: Mon
         weekdayTo: Fri
     resources:
-          limits:
-            cpu: 100m
-            memory: 30Mi
-          requests:
-            cpu: 100m
-            memory: 20Mi
+      limits:
+        cpu: 100m
+        memory: 30Mi
+      requests:
+        cpu: 100m
+        memory: 20Mi
     selectors:
     - inclusions:
       - objectSelector:
@@ -103,12 +103,12 @@ hibernator_policies:
         weekdayFrom: Mon
         weekdayTo: Fri
     resources:
-          limits:
-            cpu: 100m
-            memory: 30Mi
-          requests:
-            cpu: 100m
-            memory: 20Mi
+      limits:
+        cpu: 100m
+        memory: 30Mi
+      requests:
+        cpu: 100m
+        memory: 20Mi
     selectors:
     - inclusions:
       - objectSelector:
