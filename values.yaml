@@ -20,11 +20,18 @@ hibernator_policies:
         timeTo: 07:59:59
         weekdayFrom: Mon
         weekdayTo: Fri
+    resources:
+          limits:
+            cpu: 100m
+            memory: 30Mi
+          requests:
+            cpu: 100m
+            memory: 20Mi
     selectors:
     - inclusions:
       - objectSelector:
           name: ""
-          type: "ro,deploy,service"
+          type: "rollout,deploy,service"
           fieldSelector:
             - AfterTime(Now(), AddTime(ParseTime({{metadata.creationTimestamp}}, '2006-01-02T15:04:05Z'), '4d'))
         namespaceSelector:
@@ -48,19 +55,26 @@ hibernator_policies:
         timeTo: 23:59:59
         weekdayFrom: Mon
         weekdayTo: Sun
-      # - timeFrom: 00:00
-      #   timeTo: 08:00
-      #   weekdayFrom: Mon
-      #   weekdayTo: Fri
-      # - timeFrom: 00:00
-      #   timeTo: 23:59:59
-      #   weekdayFrom: Mon
-      #   weekdayTo: Fri
+      - timeFrom: 00:00
+        timeTo: 08:00
+        weekdayFrom: Mon
+        weekdayTo: Fri
+      - timeFrom: 00:00
+        timeTo: 23:59:59
+        weekdayFrom: Mon
+        weekdayTo: Fri
+    resources:
+          limits:
+            cpu: 100m
+            memory: 30Mi
+          requests:
+            cpu: 100m
+            memory: 20Mi
     selectors:
     - inclusions:
       - objectSelector:
           name: ""
-          type: "ro,deploy,service"
+          type: "rollout,deploy,service"
           fieldSelector:
             - AfterTime(Now(), AddTime(ParseTime({{metadata.creationTimestamp}}, '2006-01-02T15:04:05Z'), '4d'))
         namespaceSelector:
@@ -88,11 +102,18 @@ hibernator_policies:
         timeTo: 23:59:59
         weekdayFrom: Mon
         weekdayTo: Fri
+    resources:
+          limits:
+            cpu: 100m
+            memory: 30Mi
+          requests:
+            cpu: 100m
+            memory: 20Mi
     selectors:
     - inclusions:
       - objectSelector:
           name: ""
-          type: "ro,deploy"
+          type: "rollout,deploy"
           fieldSelector:
             - AfterTime(Now(), AddTime(ParseTime({{metadata.creationTimestamp}}, '2006-01-02T15:04:05Z'), '4d'))
         namespaceSelector:
